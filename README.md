@@ -11,8 +11,9 @@ Feel free to explore and use these solutions as a resource for learning and prac
 
 As part of my learning journey, I'm referring to the following sources:
 
-- # TakeUforward - Youtube channel for covering an entire topic with curated problems.
+- # TakeUforward - Youtube channel for covering an entire topic with curated problems with videos.
 - # Aditya_Verma - Youtube channel for pen and pencil explanation of the Problem.
+- # Neetcode     - Youtube channel for Clever Solutions (i.e out of box solutions with explanation)
 
 ## Coding Standards
 
