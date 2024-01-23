@@ -38,3 +38,18 @@ arr[i] contains only lowercase English letters.
 
 #solutions
 
+class Solution:
+    def maxLength(self, arr: List[str]) -> int:
+        n = len(arr)
+        memo = {}
+        def back(ind, exp):
+            if (ind, exp) in memo:return memo[(ind, exp)]
+            if ind == n:return 0
+            pick = float("-inf")
+            npick = back(ind + 1, exp)
+            if len(exp + arr[ind]) == len(set(exp + arr[ind])):
+                pick = len(arr[ind]) + back(ind + 1, exp + arr[ind])
+            memo[(ind, exp)] = max(pick, npick)
+            return memo[(ind, exp)]
+        result = back(0, "")
+        return results
