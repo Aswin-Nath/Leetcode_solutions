@@ -28,3 +28,31 @@ Constraints:
 
 The number of nodes in the tree is in the range [1, 105].
 1 <= Node.val <= 9
+
+
+# Solution
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
+        def dfs(root,map,count):
+            if not root:
+                return count
+            map[root.val]+=1
+            if not root.left and not root.right:
+                if sum(1 for i in map.values() if i%2)<=1:
+                    count+=1
+            count=dfs(root.left,map,count)
+            count=dfs(root.right,map,count)
+            map[root.val]-=1
+            if map[root.val]==0:
+                del map[root.val]
+            return count
+        if not root:
+            return 0
+        return dfs(root,Counter(),0)
