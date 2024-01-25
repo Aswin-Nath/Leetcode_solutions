@@ -5,7 +5,7 @@ class Solution:
         ma=1
         for i in range(1,n):
             for j in range(i):
-                if nums[j]<nums[i] and dp[i]<dp[j]+1:
+                if nums[j]<nums[i] and dp[i]<dp[j]+1:      #  nums[j]<nums[i] replace this with the actual condition of the problem.
                     dp[i]=dp[j]+1
             ma=max(dp[i],ma)
         print(dp)
